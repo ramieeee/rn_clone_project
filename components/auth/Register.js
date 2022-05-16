@@ -21,10 +21,16 @@ export class Register extends Component {
     const { email, password, name } = this.state;
     firebase.auth().createUserWithEmailAndPassword(email, password)  // async
     .then((result) => {
-        console.log(result);
+      firebase.firestore().collection("users")  // firestore initialization
+      .doc(firebase.auth().currentUser.uid)  // checks the authentication data
+      .set({  // parameters that we want to save
+        name,
+        email
+      })
+      console.log(result);
     })
     .catch((error) => {
-        console.log(error);
+      console.log(error);
     })
   }
 
