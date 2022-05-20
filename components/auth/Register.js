@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { View, Button, TextInput } from 'react-native';
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
-import 'firebase/compat/firestore'
+import 'firebase/compat/firestore';
 
 export class Register extends Component {
   constructor(props) { // first one to be called whenever component is created
